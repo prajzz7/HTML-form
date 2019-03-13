@@ -1,0 +1,95 @@
+<html>
+<head>
+	<title>form</title>
+	<style>
+			.fs{
+				width=2	00px;
+				height:auto;
+				margin-left:400px;
+				background-color:grey;
+				
+				border-radius:30px;
+			    }
+			#pa{
+					margin-left:200px;
+					position:relative;
+					display:inline-block;
+					background-color:;
+			}
+			
+			#pass{
+			margin-left:20px
+			}
+	</style>
+</head>
+
+<body>
+	<form name='myform' action='formsubmit.html' onsubmit='return formvalidate();'>
+		
+		<fieldset class='fs'>
+		<legend align='center'><h2>Student</h2></legend>
+		<div id='pa'>
+		USERNAME:<input type='text' name='username' ><br>
+		<div id='pass'>Password:&nbsp;<input type='password' name='password'><br></div>
+		Sex: Male<input type='radio' name='Sex' value='Male' >
+			Female<input type='radio' name='Sex' value='Female'><br><p></p>
+			
+		SELECT SUBJECTS<br>
+			M4<input type='checkbox' value='M4'>
+			M2<input type='checkbox' value='M3'>
+			M3<input type='checkbox' value='M2'><br><p></p>
+		
+		SELECT SEMESTER<br>
+			<select>
+				<option>I</option> 
+				<option>II</option> 
+				<option>III</option> 
+			</select>
+			<br>
+			<p>
+			</p>
+			INPUT YOUR PHOTO:
+			<input='file' name='My File'>
+			<br>
+		SUGGESTIONS<br><textarea name='textarea' rows='10'>
+		
+		
+		</textarea><br>
+			
+		<input type='submit' name='submit'>
+		<input type='reset' name='reset'>
+		</div>
+		</fieldset>
+	</form>
+	
+	<script>
+		function formvalidate()
+		{
+			var username=document.forms['myform']['username']
+			var password=document.forms['myform']['password']
+			var textarea=document.forms['myform']['textarea']
+			if(username.value=='')
+			{
+				alert("Please provide your name");
+				username.focus();
+				return false;
+			}
+			if(password.value=='')
+			{
+				alert("Password field is empty!");
+				password.focus();
+				return false;
+			}
+			if(textarea.value=='')
+			{
+				alert("Please enter some suggestion to help us serve you better");
+				textarea.focus();
+				return false;
+			}
+			return (true);
+		}
+	
+	</script>
+</body>
+
+</html>
